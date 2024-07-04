@@ -1,8 +1,8 @@
 ./kafka-storage.sh random-uuid
 
-./kafka-storage.sh format -t NhRJP3R-RierOhEQ7TjASw -c ../config/kraft/server-1.properties
-./kafka-storage.sh format -t NhRJP3R-RierOhEQ7TjASw -c ../config/kraft/server-2.properties
-./kafka-storage.sh format -t NhRJP3R-RierOhEQ7TjASw -c ../config/kraft/server-3.properties
+./kafka-storage.sh format -t f1kOXHvdTkWFBuGoIbZt6g -c ../config/kraft/server-1.properties
+./kafka-storage.sh format -t f1kOXHvdTkWFBuGoIbZt6g -c ../config/kraft/server-2.properties
+./kafka-storage.sh format -t f1kOXHvdTkWFBuGoIbZt6g -c ../config/kraft/server-3.properties
 
 ./kafka-server-start.sh ../config/kraft/server-3.properties
 ./kafka-server-start.sh ../config/kraft/server-2.properties
@@ -13,5 +13,6 @@
 .\kafka-topics.bat --list --bootstrap-server localhost:9092,localhost:9094
 
 ./kafka-console-consumer.sh --bootstrap-server localhost:9092,localhost:9094 --topic user-created-event-topic --property "print.key=true"
+./kafka-console-consumer.sh --bootstrap-server localhost:9092,localhost:9094 --topic user-created-event-topic.DLT --property "print.key=true"
 .\kafka-console-consumer.bat --bootstrap-server localhost:9092,localhost:9094 --topic user-created-event-topic --property "print.key=true"
 
